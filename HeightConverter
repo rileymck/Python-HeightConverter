@@ -1,0 +1,86 @@
+#riley McKenzie
+#10/9/21
+#really old project not perfect
+
+#x=feet
+#y=inches
+#r=whee you round
+#m=meters
+#cm=centimeters
+#c=where you add all inches together
+#i=getting feet to inches
+
+def check_user_input(input):
+    try:
+        # Convert it into integer
+        x = int(input)
+        print("Enter your height in feet: ", x)
+        if x<=0:
+            print('your height can not be negitive')
+            quit()
+        if x>=8:
+            print('Your really tall')
+            quit()        
+    except ValueError:
+        try:
+            # Convert it into float
+            x = float(input)
+            print("Input is a float,try again ", x)
+            quit()
+        except ValueError:
+            print("No.. input is not a number,try again")
+            quit()
+            
+def check_user_input_2(input):
+    try:
+        # Convert it into integer
+        y = int(input)
+        print("Enter your height in inches: ", y)
+        if y<=0:
+            print('your height can not be negitive')
+            quit()
+        if y>=12:
+            print('Thats over a foot,try again')
+            quit()        
+    except ValueError:
+        try:
+            # Convert it into float
+            y = float(input)
+            print("Input is a float,try again ", y)
+            quit()
+        except ValueError:
+            print("No.. input is not a number,try again")
+            quit()
+
+
+x = input("Enter your height in feet: ")
+check_user_input(x)
+
+y = input("Enter your height in inches ")
+check_user_input_2(y)
+
+#all feet into inches
+w = 12
+x=int(x)
+i=(x * w)
+print(i)
+
+#all inches total
+y=int(y)
+c=(i+y)
+print(c)
+
+#inches to cm
+cm=(c*2.54)
+print(cm)
+
+#cm to m
+m=(cm/100)
+print(m)
+
+#rounding to 2 places
+r=round(m,2)
+print(r)
+
+print("You are:" ,x,'feet and ',y,'inches'' Or you are',r,'meters')
+quit()
